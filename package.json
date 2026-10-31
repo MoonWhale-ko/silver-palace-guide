@@ -1,0 +1,1 @@
+{"name":"silver-stream-guide","private":true,"type":"module","scripts":{"build":"node scripts/build.mjs","check":"node --check admin/worker.mjs && node --check assets/home.js","deploy:admin":"wrangler deploy --config wrangler.admin.jsonc"},"dependencies":{"jose":"^6.1.0"},"devDependencies":{"wrangler":"^4.0.0"}}

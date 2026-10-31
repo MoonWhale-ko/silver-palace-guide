@@ -1,0 +1,7 @@
+{
+  "name": "silver-stream-admin",
+  "main": "admin/worker.mjs",
+  "compatibility_date": "2026-10-01",
+  "assets": {"directory":"./admin-dist","binding":"ASSETS","run_worker_first":true},
+  "build":{"command":"npm run build"}
+}
