@@ -1,0 +1,15 @@
+{
+  "heading": "실버니아를 탐색하는\n당신을 위한 가이드.",
+  "description": "캐릭터와 장비부터 육성 계획까지, 필요한 기록을 찾아보세요.",
+  "beginnerTitle": "처음 시작하시나요?",
+  "beginnerDescription": "기본 시스템과 성장 흐름을 알아보는 입문 가이드",
+  "updateText": "실버 스트림 홈 화면 시안 구성",
+  "updateDate": "2026-10-31",
+  "menus": [
+    {"title":"캐릭터 도감","description":"기본 정보 · 스킬 · 추천 조합","url":""},
+    {"title":"장비 데이터베이스","description":"장비 능력치 · 효과 · 추천 대상","url":""},
+    {"title":"육성 가이드","description":"시스템 이해 · 성장 순서 · 재료","url":""},
+    {"title":"콘텐츠 공략","description":"콘텐츠별 진행 방법과 핵심 공략","url":""},
+    {"title":"육성 계산기","description":"목표 설정 · 필요한 재료 계산","url":""}
+  ]
+}
