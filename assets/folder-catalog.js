@@ -1,4 +1,5 @@
 import {playOpening} from './opening-motion.js';
+import {createApplication} from './application-sheet.js';
 import {createCharacterRecord} from './character-record.js';
 export async function openCharacterCatalog(root){
  let records;try{const response=await fetch(new URL('../data/characters.json',import.meta.url),{cache:'no-cache'});if(!response.ok)throw Error();records=(await response.json()).characters;}catch{root.querySelector('#dialog-content').textContent='캐릭터 데이터를 불러오지 못했습니다. 새로고침해주세요.';return;}
@@ -173,7 +174,7 @@ export async function openCharacterCatalog(root){
 
 
  function makeDossier(source,selected){ const stage=document.createElement('div');stage.className='dossier-stage';stage.style.cssText=source.style.cssText;stage.style.removeProperty('z-index');
- const page=document.createElement('article');page.className='dossier-resume';page.append(createCharacterRecord(selected));
+ const page=document.createElement('article');page.className='dossier-resume';page.append(createApplication(selected));
  const front=source.querySelector('.folder-item');front.classList.add('dossier-front');front.setAttribute('aria-hidden','true');
  const reverse=document.createElement('div');reverse.className='dossier-reverse';reverse.innerHTML='<svg viewBox="0 0 360 509" preserveAspectRatio="none" aria-hidden="true"><path transform="translate(360 0) scale(-1 1)" d="M18 8 H155 Q160 8 163 12 L174 27 Q177 30 183 30 H342 Q348 30 348 36 V499 Q348 505 342 505 H18 Q12 505 12 499 V14 Q12 8 18 8 Z"/></svg>';const insertedPapers=[...front.querySelectorAll('.folder-paper')];front.querySelectorAll('.folder-back-cover,.folder-spine').forEach(p=>p.remove());front.append(reverse);const rear=document.createElement('div');rear.className='dossier-rear';rear.setAttribute('aria-hidden','true');const sheets=document.createElement('div');sheets.className='dossier-sheets';sheets.setAttribute('aria-hidden','true');insertedPapers.forEach(sheet=>{sheet.classList.add('dossier-original-paper');sheets.append(sheet);});
 

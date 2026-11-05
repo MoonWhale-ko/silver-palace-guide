@@ -171,7 +171,7 @@
 .catalog-brand img{display:block;width:156px;max-width:100%;height:auto}
 .header-diamond{color:#8d774b;font-size:8px;flex:none}
 .catalog-header-actions{display:flex;gap:18px;align-items:center;padding:0 4px}
-.catalog-header-button{position:relative;isolation:isolate;display:grid;place-items:center;width:36px;height:36px;border:1px solid #8d774b;border-radius:50%;padding:7px;background:#eee5ce url('./page-paper-original-v11.webp') center/300px auto;color:#29343d;cursor:pointer;transition:background-color .18s,color .18s}
+.catalog-header-button{position:relative;isolation:isolate;display:grid;place-items:center;width:36px;height:36px;border:1px solid #8d774b;border-radius:50%;padding:0;background:#eee5ce url('./page-paper-original-v11.webp') center/300px auto;color:#29343d;cursor:pointer;transition:background-color .18s,color .18s}
 .catalog-header-button:before{content:'';position:absolute;inset:2px;border:1px solid #a28b60;transform:rotate(45deg);z-index:-1;pointer-events:none}
 .catalog-header-button svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.5}
 .catalog-header-button:hover,.catalog-header-button[aria-expanded=true]{background:#182b43;color:#eee5ce}
