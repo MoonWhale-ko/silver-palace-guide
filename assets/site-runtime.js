@@ -14,7 +14,7 @@ export function mount(data){
   root.querySelector('#dialog-title').textContent=title;root.querySelector('#dialog-status').textContent=status;
   const body=root.querySelector('#dialog-content');body.replaceChildren();paragraphs.forEach(text=>{const p=document.createElement('p');p.textContent=text;body.append(p);});if(!dialog.open)dialog.showModal();
  }
- function openMenu(menu){if(menu.url){location.assign(menu.url);return;}show(menu.title,[menu.description+'에 관한 자료를 모을 예정입니다.','현재는 홈 화면을 먼저 구성하고 있습니다. 자료가 준비되면 이 메뉴에서 바로 볼 수 있도록 연결하겠습니다.']);}
+ function openMenu(menu){if(menu.title==='캐릭터'){const url=new URL('../characters.html',import.meta.url);url.search=new URL(import.meta.url).search;location.assign(url);return;}if(menu.url){location.assign(menu.url);return;}show(menu.title,[menu.description+'에 관한 자료를 모을 예정입니다.','현재는 홈 화면을 먼저 구성하고 있습니다. 자료가 준비되면 이 메뉴에서 바로 볼 수 있도록 연결하겠습니다.']);}
  const menus=root.querySelector('.main-menus');menus.replaceChildren();
  data.menus.forEach(menu=>{const button=document.createElement('button');button.type='button';button.className='menu';const icon=document.createElement('span');icon.className='menu-icon';icon.setAttribute('aria-hidden','true');const iconName=menu.title==='동기'?'motive':menu.title==='장비'?'equipment':'character';icon.style.setProperty('--menu-icon',`url("${new URL(`./menu-${iconName}.png`,import.meta.url).href}")`);const title=document.createElement('span');title.className='menu-title';title.textContent=menu.title;const description=document.createElement('span');description.className='menu-description';description.textContent=menu.description;const bottom=document.createElement('span');bottom.className='menu-bottom';const status=document.createElement('span');status.textContent=menu.url?'자료 보기':'준비 중';const arrow=document.createElement('span');arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');bottom.append(status,arrow);button.append(icon,title,description,bottom);button.onclick=()=>openMenu(menu);menus.append(button);});
  const guides=data.guides||[],guideList=root.querySelector('.guide-list');guideList.replaceChildren();
@@ -54,3 +54,5 @@ export function mount(data){
  queuePaperCuts();
 
 }
+
+// Refresh folder preview module after adding versioned imports.
