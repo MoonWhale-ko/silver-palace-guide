@@ -22,18 +22,20 @@ function stampInkMask(characterId) {
   const distance = 39 + random() * 16;
   const x = size / 2 + Math.cos(angle) * distance;
   const y = size / 2 + Math.sin(angle) * distance;
-  const radius = 5 + random() * 11;
-  const patch = ink.createRadialGradient(x, y, 0, x, y, radius);
-  patch.addColorStop(0, 'rgba(0,0,0,' + (.25 + random() * .37) + ')');
-  patch.addColorStop(1, 'transparent');
-  ink.fillStyle = patch;
-  ink.fillRect(x - radius, y - radius, radius * 2, radius * 2);
+  const radius = 3 + random() * 4;
+  ink.beginPath();
+  for (let point = 0; point < 12; point++) {
+   const direction = angle + point * Math.PI / 6;
+   const edge = radius * (.55 + random() * .65);
+   ink.lineTo(x + Math.cos(direction) * edge, y + Math.sin(direction) * edge);
+  }
+  ink.closePath();
+  ink.fill();
  }
- for (let i = 0; i < 240; i++) {
+ for (let i = 0; i < 150; i++) {
   const x = random() * size;
   const y = random() * size;
-  const radius = .24 + random() * .66;
-  ink.fillStyle = 'rgba(0,0,0,' + (.16 + random() * .47) + ')';
+  const radius = .45 + random() * .7;
   ink.beginPath();
   ink.arc(x, y, radius, 0, Math.PI * 2);
   ink.fill();
