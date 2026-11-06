@@ -11,14 +11,14 @@ body{background:#382318;isolation:isolate;color:#eee2c8;min-height:100vh;overflo
    Widths include the transparent margins in the original asset files. */
 .desk-vignette{--desk-unit:min(22.5px,calc((100vw - 60px)/24));position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
 .desk-prop{position:absolute;display:block;object-fit:contain;user-select:none;pointer-events:none;filter:drop-shadow(1px 3px 3px #160c0738)}
-.desk-lamp{width:calc(var(--desk-unit)*28);left:calc(50% + var(--desk-unit)*13 - 6px);top:-45px;z-index:2;transform:rotate(32deg)}
+.desk-lamp{width:calc(var(--desk-unit)*28);left:calc(50% + var(--desk-unit)*13 + 114px);top:-45px;z-index:2;transform:rotate(32deg)}
 .desk-quill{width:calc(var(--desk-unit)*27);right:calc(50% + var(--desk-unit)*9);bottom:180px;z-index:3;transform:rotate(-120deg)}
 .desk-letters{width:calc(var(--desk-unit)*21);right:calc(50% + var(--desk-unit)*12);top:-70px;z-index:1;transform:rotate(-19deg)}
 .desk-books{display:none}
 .desk-tea{width:calc(var(--desk-unit)*21);left:calc(50% + var(--desk-unit)*12);bottom:-65px;transform:rotate(12deg)}
 body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:#382318 url('./desk/wood.webp') center/cover no-repeat}
 @media(max-width:900px){
- .desk-lamp{left:calc(50% + var(--desk-unit)*9 - 6px)}
+ .desk-lamp{left:calc(50% + var(--desk-unit)*9 + 114px)}
  .desk-quill{right:calc(50% + var(--desk-unit)*4);bottom:135px}
  .desk-letters{right:calc(50% + var(--desk-unit)*10);top:-35px}
  .desk-tea{left:calc(50% + var(--desk-unit)*8);bottom:-45px}
