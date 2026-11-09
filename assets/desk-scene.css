@@ -7,20 +7,23 @@ body{background:#382318;isolation:isolate;color:#eee2c8;min-height:100vh;overflo
 #ss-blue-silver #b-dialog .catalog-note,#ss-blue-silver .catalog-sort{position:relative;z-index:2}
 #ss-blue-silver .catalog-sort select{background:#e9dec8;border-color:#a68a5e}
 #ss-blue-silver .folder-stack{z-index:1}
-/* A 24 cm document folder is 540 px wide; every prop uses the same scale.
-   Widths include the transparent margins in the original asset files. */
-.desk-vignette{--desk-unit:min(22.5px,calc((100vw - 60px)/24));position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
-.desk-prop{position:absolute;display:block;object-fit:contain;user-select:none;pointer-events:none;filter:drop-shadow(1px 3px 3px #160c0738)}
-.desk-lamp{width:calc(var(--desk-unit)*28);left:calc(50% + var(--desk-unit)*13 + 114px);top:-45px;z-index:2;transform:rotate(32deg)}
-.desk-quill{width:calc(var(--desk-unit)*27);right:calc(50% + var(--desk-unit)*9);bottom:180px;z-index:3;transform:rotate(-120deg)}
-.desk-letters{width:calc(var(--desk-unit)*21);right:calc(50% + var(--desk-unit)*12);top:-70px;z-index:1;transform:rotate(-19deg)}
-.desk-books{display:none}
-.desk-tea{width:calc(var(--desk-unit)*21);left:calc(50% + var(--desk-unit)*12);bottom:-65px;transform:rotate(12deg)}
-body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:#382318 url('./desk/wood.webp') center/cover no-repeat}
+/* The fixed scene leaves the center clear for the scrollable folder stack. */
+.desk-vignette{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.desk-prop{position:absolute;display:block;user-select:none;pointer-events:none;filter:drop-shadow(2px 5px 5px #160c0755)}
+.desk-banker-lamp{width:min(26vw,360px);left:4%;top:8%;transform:rotate(40deg)}
+.desk-stationery-tray{width:min(26vw,365px);right:2%;bottom:17%;transform:rotate(-8deg)}
+.desk-teacup{width:min(13vw,170px);right:8%;top:19%;transform:rotate(12deg)}
+.desk-ink-quill{width:min(17vw,205px);left:8%;bottom:21%;transform:rotate(-10deg)}
+.desk-ribbon-scroll{width:min(6vw,68px);right:17%;top:39%;transform:rotate(67deg)}
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:#382318 url('./desk/tabletop.webp') center/cover no-repeat}
 @media(max-width:900px){
- .desk-lamp{left:calc(50% + var(--desk-unit)*9 + 114px)}
- .desk-quill{right:calc(50% + var(--desk-unit)*4);bottom:135px}
- .desk-letters{right:calc(50% + var(--desk-unit)*10);top:-35px}
- .desk-tea{left:calc(50% + var(--desk-unit)*8);bottom:-45px}
+ .desk-banker-lamp{left:-6%;top:12%}
+ .desk-stationery-tray{right:-8%;bottom:16%}
+ .desk-teacup{right:1%;top:23%}
+ .desk-ink-quill{left:-3%;bottom:24%}
+ .desk-ribbon-scroll{right:4%;top:44%}
 }
-@media(max-width:540px){#ss-blue-silver>header{padding:18px 22px}}
+@media(max-width:540px){
+ #ss-blue-silver>header{padding:18px 22px}
+ .desk-vignette{opacity:.72}
+}
