@@ -43,13 +43,13 @@ figure.application-sheet{position:relative;margin:0;width:100%;aspect-ratio:1055
 }
 
 #ss-blue-silver .catalog-page.catalog-dialog.ashley-detail-page{
- box-sizing:border-box;max-width:1200px
+ box-sizing:border-box;max-width:1440px
 }
 #ss-blue-silver .ashley-detail-page article.character-record{
- max-width:1152px
+ max-width:none
 }
 #ss-blue-silver .ashley-detail-page .character-section p{
- max-width:72ch
+ max-width:100ch
 }
 
 .character-guide-source{margin:12px 0 0;color:#625b50;font-size:.875rem}
@@ -92,9 +92,9 @@ body:has(.ashley-detail-page)::before{content:none}
  grid-column:1;grid-row:1;background:transparent;height:clamp(280px,42vw,450px);object-fit:contain
 }
 .stats-profile :is(dt,.character-guide-source){color:var(--stats-muted)}
-.stats-profile-layout{display:grid;grid-template-columns:145px minmax(0,1fr);gap:24px;margin-top:24px;align-items:start}
-.stats-profile .character-sections{display:grid;gap:0;margin:0;border:0}
-.stats-profile .character-sections a{border-bottom:1px solid var(--stats-line);text-decoration:none}
+.stats-profile-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin-top:24px}
+.stats-profile .character-sections{display:flex;flex-wrap:wrap;gap:0 24px;margin:0;border-block:1px solid var(--stats-line)}
+.stats-profile .character-sections a{text-decoration:none}
 .stats-profile .character-sections a:hover{text-decoration:underline}
 .stats-profile .character-section{
  padding:clamp(14px,3vw,26px);margin-bottom:16px;border:1px solid var(--stats-line);border-radius:14px;background:var(--stats-panel)
@@ -105,8 +105,8 @@ body:has(.ashley-detail-page)::before{content:none}
 .stats-profile #character-skills .character-entry + .character-entry{padding-top:14px;border-top:1px solid var(--stats-line)}
 .stats-profile .character-skill-values summary{color:#f4bc9b}
 @media(max-width:740px){
- .stats-profile-layout{grid-template-columns:minmax(0,1fr);gap:14px}
- .stats-profile .character-sections{display:flex;flex-wrap:wrap;gap:0 16px}
+ .stats-profile-layout{gap:14px}
+ .stats-profile .character-sections{gap:0 16px}
 }
 @media(max-width:510px){
  #ss-blue-silver .catalog-page.catalog-dialog.ashley-detail-page{padding-inline:14px}
