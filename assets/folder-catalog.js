@@ -310,9 +310,8 @@ export async function openCharacterCatalog(root){
  const selectedId=new URL(location.href).searchParams.get('character'),selected=records.find(c=>c.id===selectedId);
  if(selected){
  const back=document.createElement('a');const listUrl=new URL(location.href);listUrl.searchParams.delete('character');back.href=listUrl.href;back.textContent='← 캐릭터 목록';back.className='dossier-back';
- const record=document.createElement('article');record.className='character-record';
- const meta=document.createElement('p');meta.className='character-record-meta';const identity=document.createElement('span');identity.textContent=selected.name;const category=document.createElement('span');category.textContent=selected.element+' · '+selected.job;meta.append(identity,category);
- record.append(meta,createCharacterRecord(selected));body.replaceChildren(back,record);root.querySelector('#dialog-title').textContent=selected.name;root.querySelector('#dialog-status').textContent='캐릭터 기록';document.title=selected.name+' · S.T.A.T.S.';return;
+ const icons={element:elementIcons[selected.element],job:jobIcons[selected.job]};
+ body.replaceChildren(back,createCharacterRecord(selected,icons));host.classList.add('character-detail-page');root.querySelector('#dialog-title').textContent=selected.name;root.querySelector('#dialog-status').textContent='캐릭터 기록';document.title=selected.name+' · S.T.A.T.S.';return;
  }
  const resize=new ResizeObserver(entries=>{const width=entries[0].contentRect.width;if(width>0){const ratio=parseFloat(getComputedStyle(stack).getPropertyValue('--folder-ratio'))||.707;stack.style.setProperty('--folder-height',(width/ratio)+'px');}});resize.observe(stack);
  if(host.tagName==='DIALOG'&&!host.open)host.showModal();
