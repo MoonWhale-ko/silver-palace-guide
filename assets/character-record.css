@@ -51,3 +51,16 @@ figure.application-sheet{position:relative;margin:0;width:100%;aspect-ratio:1055
 #ss-blue-silver .ashley-detail-page .character-section p{
  max-width:72ch
 }
+
+.character-guide-source{margin:12px 0 0;color:#625b50;font-size:.875rem}
+.character-combat-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding-inline-start:1.4em}
+.character-combat-steps .character-entry{margin:0;padding:8px 0;border-top:1px solid #ded8cb}
+.character-combat-steps h3,.character-entry:has(.character-skill-facts) h3{margin:4px 0 8px}
+.character-skill-facts{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:5px 12px;margin:0;max-width:72ch}
+.character-skill-facts dt{color:#625b50}
+.character-skill-facts dd{margin:0}
+.character-skill-values{margin-top:8px}
+.character-skill-values summary{min-height:32px;cursor:pointer}
+.character-skill-values table{border-collapse:collapse;font-variant-numeric:tabular-nums}
+.character-skill-values :is(th,td){padding:5px 8px;border-bottom:1px solid #ded8cb;text-align:left}
+@media(max-width:680px){.character-combat-steps{grid-template-columns:1fr;gap:0}}

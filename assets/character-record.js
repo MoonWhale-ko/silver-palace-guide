@@ -16,6 +16,7 @@ export function createCharacterRecord(character, icons = {}) {
   ['속성', character.element, icons.element],
   ['직군', character.job, icons.job],
   ['소속', character.affiliation],
+  ['역할', character.role],
  ]) {
   if (!value) continue;
   const row = make('div');
@@ -36,6 +37,7 @@ export function createCharacterRecord(character, icons = {}) {
  picture.alt = character.name;
  hero.append(identity, picture);
  record.append(hero);
+ if (character.guideSource) record.append(make('p', 'character-guide-source', character.guideSource));
 
  const navigation = make('nav', 'character-sections');
  navigation.setAttribute('aria-label', '캐릭터 상세 목차');
@@ -46,6 +48,7 @@ export function createCharacterRecord(character, icons = {}) {
   ['growth', '육성·장비', character.growth],
   ['gallery', '갤러리', character.gallery],
  ]) {
+  if (character.guideSource && !content?.length) continue;
   const id = 'character-' + key;
   const link = make('a', '', label);
   link.href = '#' + id;
@@ -56,16 +59,47 @@ export function createCharacterRecord(character, icons = {}) {
   if (typeof content === 'string' && content.trim()) {
    section.append(make('p', '', content));
   } else if (Array.isArray(content) && content.length) {
+   const steps = key === 'combat' && character.combatNote ? make('ol', 'character-combat-steps') : null;
    for (const item of content) {
-    const entry = make('div', 'character-entry');
-    entry.append(make('h3', '', item.name), make('p', '', item.description));
+    const entry = make(steps ? 'li' : 'div', 'character-entry');
+    entry.append(make('h3', '', item.name));
+    if (item.condition) {
+     const facts = make('dl', 'character-skill-facts');
+     for (const [label, value] of [['발동 조건', item.condition], ['효과', item.description], ['자원 변화', item.resource]]) {
+      if (value) facts.append(make('dt', '', label), make('dd', '', value));
+     }
+     entry.append(facts);
+    } else {
+     entry.append(make('p', '', item.description));
+    }
+    if (item.values?.length) {
+     const details = make('details', 'character-skill-values');
+     details.append(make('summary', '', '레벨 1·10 수치 보기'));
+     const table = make('table');
+     const head = table.createTHead().insertRow();
+     for (const label of ['항목', '레벨 1', '레벨 10']) {
+      const cell = make('th', '', label);
+      cell.scope = 'col';
+      head.append(cell);
+     }
+     const rows = table.createTBody();
+     for (const [label, first, last] of item.values) {
+      const row = rows.insertRow();
+      const cell = make('th', '', label);
+      cell.scope = 'row';
+      row.append(cell, make('td', '', first), make('td', '', last));
+     }
+     details.append(table);
+     entry.append(details);
+    }
     if (item.url && key === 'gallery') {
      const media = make('a', '', '자료 보기');
      media.href = item.url;
      entry.append(media);
     }
-    section.append(entry);
+    (steps || section).append(entry);
    }
+   if (steps) section.append(steps, make('p', 'character-combat-note', character.combatNote));
   } else {
    section.append(make('p', 'character-section-empty', '등록된 자료가 없습니다.'));
   }
