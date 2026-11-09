@@ -75,12 +75,12 @@ body:has(.ashley-detail-page)::before{content:none}
  margin:0;padding:0;background:transparent;color:var(--stats-text);font:400 1rem/1.65 Pretendard,system-ui,sans-serif
 }
 .stats-profile .character-profile{
- display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.7fr);
+ display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);
  gap:clamp(16px,5vw,48px);max-width:none;margin:0;padding:clamp(18px,4vw,44px);
  border:1px solid var(--stats-line);border-radius:18px;
  background:radial-gradient(ellipse at top right,#453444 0%,transparent 64%),var(--stats-panel)
 }
-.stats-profile .character-identity{grid-column:1;grid-row:1}
+.stats-profile .character-identity{grid-column:2;grid-row:1}
 .stats-profile .stats-profile-kicker{margin:0 0 4px;color:#f4bc9b;font-size:.875rem}
 .stats-profile .character-identity h1{font:700 clamp(36px,6vw,64px)/1.08 Pretendard,system-ui,sans-serif;margin:0}
 .stats-profile .character-alias{margin:4px 0 16px;color:var(--stats-muted);font-size:1.125rem}
@@ -89,7 +89,7 @@ body:has(.ashley-detail-page)::before{content:none}
  display:flex;flex-wrap:wrap;gap:8px;padding:5px 10px;border:1px solid var(--stats-line);border-radius:8px
 }
 .stats-profile .character-profile-art{
- grid-column:2;grid-row:1;background:transparent;height:clamp(160px,27vw,300px);object-fit:contain
+ grid-column:1;grid-row:1;background:transparent;height:clamp(280px,42vw,450px);object-fit:contain
 }
 .stats-profile :is(dt,.character-guide-source){color:var(--stats-muted)}
 .stats-profile-layout{display:grid;grid-template-columns:145px minmax(0,1fr);gap:24px;margin-top:24px;align-items:start}
@@ -111,7 +111,8 @@ body:has(.ashley-detail-page)::before{content:none}
 @media(max-width:510px){
  #ss-blue-silver .catalog-page.catalog-dialog.ashley-detail-page{padding-inline:14px}
  .stats-profile .character-profile{grid-template-columns:minmax(0,1fr)}
- .stats-profile .character-profile-art{grid-column:1;grid-row:2}
+ .stats-profile .character-identity{grid-column:1;grid-row:2}
+ .stats-profile .character-profile-art{grid-column:1;grid-row:1;height:clamp(220px,80vw,320px)}
  .stats-profile .character-skill-facts{grid-template-columns:minmax(0,1fr);gap:2px}
  .stats-profile .character-skill-facts dd+dt{margin-top:5px}
 }
