@@ -69,13 +69,11 @@ body:has(.ashley-detail-page)::before{content:none}
 }
 #ss-blue-silver .ashley-detail-page .stats-profile{
  --stats-text:#edf2fa;--stats-muted:#b8c6da;--stats-line:#3b4960;--stats-panel:#1b2536;
- margin:0;padding:0;background:transparent;color:var(--stats-text);font:400 1rem/1.65 Pretendard,system-ui,sans-serif
+ margin:0;padding:clamp(16px,3vw,40px);background:radial-gradient(ellipse at top right,#453444 0%,transparent 52%),var(--stats-panel);border:1px solid var(--stats-line);border-radius:18px;color:var(--stats-text);font:400 1rem/1.65 Pretendard,system-ui,sans-serif
 }
 .stats-profile .character-profile{
  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);
- gap:clamp(16px,5vw,48px);max-width:none;margin:0;padding:clamp(18px,4vw,44px);
- border:1px solid var(--stats-line);border-radius:18px;
- background:radial-gradient(ellipse at top right,#453444 0%,transparent 64%),var(--stats-panel)
+ gap:clamp(16px,3vw,36px);max-width:none;margin:0;padding:0;border:0;background:transparent
 }
 .stats-profile .character-identity{grid-column:2;grid-row:1}
 .stats-profile .stats-profile-kicker{margin:0 0 4px;color:#f4bc9b;font-size:.875rem}
@@ -94,7 +92,7 @@ body:has(.ashley-detail-page)::before{content:none}
 .stats-profile .character-sections a{text-decoration:none}
 .stats-profile .character-sections a:hover{text-decoration:underline}
 .stats-profile .character-section{
- padding:clamp(14px,3vw,26px);margin-bottom:16px;border:1px solid var(--stats-line);border-radius:14px;background:var(--stats-panel)
+ padding:clamp(14px,3vw,26px) 0;margin:0;border:0;border-bottom:1px solid var(--stats-line);background:transparent
 }
 .stats-profile .character-section h2{font:650 1.25rem/1.4 Pretendard,system-ui,sans-serif;margin:0 0 14px}
 .stats-profile .character-section p{color:var(--stats-muted)}
