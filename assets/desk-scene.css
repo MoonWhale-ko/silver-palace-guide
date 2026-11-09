@@ -13,14 +13,14 @@ body{background:#382318;isolation:isolate;color:#eee2c8;min-height:100vh;overflo
 .desk-banker-lamp{width:min(29vw,440px);left:2%;top:17%;transform:translateY(-50%) rotate(-15deg)}
 .desk-stationery-tray{width:min(29vw,440px);right:-3%;top:8%;transform:translateY(-50%) rotate(180deg)}
 .desk-teacup{width:min(12vw,175px);left:87%;top:56%;transform:translate(-50%,-50%) rotate(12deg)}
-.desk-ink-quill{width:min(16vw,205px);left:91%;top:89%;transform:translate(-50%,-50%) rotate(38deg)}
+.desk-ink-quill{width:min(16vw,205px,26vh);right:1%;top:80%;transform:translateY(-50%) rotate(68deg)}
 .desk-ribbon-scroll{width:min(5.5vw,82px);left:21%;top:60%;transform:translate(-50%,-50%) rotate(17deg)}
 body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:#382318 url('./desk/tabletop.webp') center/cover no-repeat}
 @media(max-width:900px){
  .desk-banker-lamp{left:-6%;top:21%}
  .desk-stationery-tray{right:-8%;top:13%}
  .desk-teacup{left:94%;top:55%}
- .desk-ink-quill{left:94%;top:86%}
+ .desk-ink-quill{top:78%}
  .desk-ribbon-scroll{left:7%;top:61%}
 }
 @media(max-width:540px){
