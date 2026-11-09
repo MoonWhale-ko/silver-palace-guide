@@ -43,13 +43,10 @@ figure.application-sheet{position:relative;margin:0;width:100%;aspect-ratio:1055
 }
 
 #ss-blue-silver .catalog-page.catalog-dialog.ashley-detail-page{
- box-sizing:border-box;max-width:1440px
+ box-sizing:border-box;width:100%;max-width:none;padding-inline:clamp(14px,2.5vw,48px)
 }
 #ss-blue-silver .ashley-detail-page article.character-record{
  max-width:none
-}
-#ss-blue-silver .ashley-detail-page .character-section p{
- max-width:100ch
 }
 
 .character-guide-source{margin:12px 0 0;color:#625b50;font-size:.875rem}
@@ -101,6 +98,7 @@ body:has(.ashley-detail-page)::before{content:none}
 }
 .stats-profile .character-section h2{font:650 1.25rem/1.4 Pretendard,system-ui,sans-serif;margin:0 0 14px}
 .stats-profile .character-section p{color:var(--stats-muted)}
+.stats-profile .character-skill-facts{max-width:none}
 .stats-profile .character-combat-steps li,.stats-profile .character-skill-values :is(th,td){border-color:var(--stats-line)}
 .stats-profile #character-skills .character-entry + .character-entry{padding-top:14px;border-top:1px solid var(--stats-line)}
 .stats-profile .character-skill-values summary{color:#f4bc9b}
