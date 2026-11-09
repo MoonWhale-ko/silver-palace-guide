@@ -1,119 +1,13 @@
+.character-summary{margin:0;width:100%;aspect-ratio:1055/1491;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:10%;background:#eee5ce url('./page-paper-original-v11.webp') center/cover;color:#354149;box-shadow:0 3px 15px #302a2028}
+.character-summary-portrait{display:block;width:min(220px,60%);height:auto;object-fit:contain}
+.character-summary h3{font:400 clamp(20px,4vw,32px)/1.5 MapoGoldenPier,serif;margin:0}
+.character-summary p{font-size:14px;margin:0}
 #ss-blue-silver .folder-opening .dossier-stage .dossier-resume{inset:8% auto auto 8%;width:84%;height:auto;aspect-ratio:1055/1491;padding:0;background:none;overflow:hidden;pointer-events:none}
 #ss-blue-silver .dossier-resume .application-sheet{height:100%}
+#ss-blue-silver article.character-record{padding:0;min-height:0;background:none;max-width:760px;margin:0 auto}
+#ss-blue-silver .character-record-meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;margin:0 0 18px;color:#d6c5a6}
+
 figure.application-sheet{position:relative;margin:0;width:100%;aspect-ratio:1055/1491;container-type:inline-size;color:#48483d}
 .application-template{display:block;width:100%;height:100%;object-fit:fill}
 .application-photo{position:absolute;left:4.93%;top:15.62%;width:18.3%;height:18.5%;object-fit:contain;object-position:center;filter:sepia(.14) saturate(.85);mix-blend-mode:multiply}
 .application-name{position:absolute;left:42.2%;top:16.05%;width:51%;height:2.8%;display:flex;align-items:center;font-family:MapoGoldenPier,'Noto Serif KR',serif;font-size:2.65cqw;line-height:1.15;letter-spacing:.06em;white-space:nowrap}
-
-#ss-blue-silver .character-detail-page #dialog-title,
-#ss-blue-silver .character-detail-page #dialog-status{display:none}
-#ss-blue-silver article.character-record{
- max-width:840px;margin:18px auto 0;padding:clamp(16px,4vw,36px);
- background:#fcfaf5;color:#26333e;box-sizing:border-box;min-height:0
-}
-.character-profile{
- display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
- gap:clamp(16px,5vw,48px);align-items:center
-}
-.character-profile-art{
- grid-column:1;grid-row:1;width:100%;height:clamp(200px,34vw,320px);
- display:block;object-fit:contain;background:#eee9dd
-}
-.character-identity{grid-column:2;grid-row:1}
-.character-alias{color:#625b50;margin:0 0 4px}
-.character-identity h1{font:400 clamp(26px,5vw,42px)/1.2 MapoGoldenPier,serif;margin:0 0 18px}
-.character-identity dl{margin:0}
-.character-identity dl div{display:grid;grid-template-columns:55px 1fr;padding:8px 0;border-top:1px solid #ded8cb}
-.character-identity dt{color:#625b50}
-.character-identity dd{margin:0;display:flex;align-items:center;gap:8px}
-.character-identity dd img{width:18px;height:18px;object-fit:contain}
-.character-sections{display:flex;flex-wrap:wrap;gap:0 22px;border-block:1px solid #ded8cb;margin-top:24px}
-.character-sections a{display:inline-flex;min-height:44px;align-items:center;color:inherit}
-.character-section{padding:16px 0;border-bottom:1px solid #ded8cb;scroll-margin-top:110px}
-.character-section:last-child{border-bottom:0}
-.character-section h2{font-size:20px;margin:0 0 8px}
-.character-section p{margin:0;white-space:pre-line}
-.character-section-empty{color:#625b50}
-.character-entry + .character-entry{margin-top:14px}
-@media(max-width:510px){
- .character-profile{grid-template-columns:minmax(0,1fr)}
- .character-identity{grid-column:1;grid-row:1}
- .character-profile-art{grid-row:2}
- .character-sections{gap:0 12px}
-}
-
-#ss-blue-silver #b-dialog.catalog-page.catalog-dialog.ashley-detail-page{
- box-sizing:border-box;width:100%;max-width:none;padding-inline:clamp(14px,2.5vw,48px)
-}
-#ss-blue-silver .ashley-detail-page article.character-record{
- max-width:none
-}
-
-.character-guide-source{margin:12px 0 0;color:#625b50;font-size:.875rem}
-.character-combat-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding-inline-start:1.4em}
-.character-combat-steps .character-entry{margin:0;padding:8px 0;border-top:1px solid #ded8cb}
-.character-combat-steps h3,.character-entry:has(.character-skill-facts) h3{margin:4px 0 8px}
-.character-skill-facts{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:5px 12px;margin:0;max-width:72ch}
-.character-skill-facts dt{color:#625b50}
-.character-skill-facts dd{margin:0}
-.character-skill-values{margin-top:8px}
-.character-skill-values summary{min-height:32px;cursor:pointer}
-.character-skill-values table{border-collapse:collapse;font-variant-numeric:tabular-nums}
-.character-skill-values :is(th,td){padding:5px 8px;border-bottom:1px solid #ded8cb;text-align:left}
-@media(max-width:680px){.character-combat-steps{grid-template-columns:1fr;gap:0}}
-
-body:has(.ashley-detail-page){background:#101622}
-body:has(.ashley-detail-page)::before{content:none}
-#ss-blue-silver .ashley-detail-page .dossier-back{
- display:inline-flex;align-items:center;min-height:44px;margin:0 0 12px;color:#c7d3e5
-}
-#ss-blue-silver .ashley-detail-page .stats-profile{
- --stats-text:#edf2fa;--stats-muted:#b8c6da;--stats-line:#3b4960;--stats-panel:#1b2536;
- margin:0;padding:clamp(16px,3vw,40px);background:radial-gradient(ellipse at top right,#453444 0%,transparent 52%),var(--stats-panel);border:1px solid var(--stats-line);border-radius:18px;color:var(--stats-text);font:400 1rem/1.65 Pretendard,system-ui,sans-serif
-}
-.stats-profile .character-profile{
- display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);
- gap:clamp(16px,3vw,36px);max-width:none;margin:0;padding:0;border:0;background:transparent
-}
-.stats-profile .character-identity{grid-column:2;grid-row:1}
-.stats-profile .stats-profile-kicker{margin:0 0 4px;color:#f4bc9b;font-size:.875rem}
-.stats-profile .character-identity h1{font:700 clamp(36px,6vw,64px)/1.08 Pretendard,system-ui,sans-serif;margin:0}
-.stats-profile .character-alias{margin:4px 0 16px;color:var(--stats-muted);font-size:1.125rem}
-.stats-profile .character-identity dl:not(.stats-profile-details){display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.stats-profile .character-identity dl:not(.stats-profile-details) div{
- display:flex;flex-wrap:wrap;gap:8px;padding:5px 10px;border:1px solid var(--stats-line);border-radius:8px
-}
-.stats-profile .character-profile-art{
- grid-column:1;grid-row:1;background:transparent;height:clamp(280px,42vw,450px);object-fit:contain
-}
-.stats-profile :is(dt,.character-guide-source){color:var(--stats-muted)}
-.stats-profile-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin-top:24px}
-.stats-profile .character-sections{display:flex;flex-wrap:wrap;gap:0 24px;margin:0;border-block:1px solid var(--stats-line)}
-.stats-profile .character-sections a{text-decoration:none}
-.stats-profile .character-sections a:hover{text-decoration:underline}
-.stats-profile .character-section{
- padding:clamp(14px,3vw,26px) 0;margin:0;border:0;border-bottom:1px solid var(--stats-line);background:transparent
-}
-.stats-profile .character-section h2{font:650 1.25rem/1.4 Pretendard,system-ui,sans-serif;margin:0 0 14px}
-.stats-profile .character-section p{color:var(--stats-muted)}
-.stats-profile .character-skill-facts{max-width:none}
-.stats-profile .character-combat-steps li,.stats-profile .character-skill-values :is(th,td){border-color:var(--stats-line)}
-.stats-profile #character-skills .character-entry + .character-entry{padding-top:14px;border-top:1px solid var(--stats-line)}
-.stats-profile .character-skill-values summary{color:#f4bc9b}
-@media(max-width:740px){
- .stats-profile-layout{gap:14px}
- .stats-profile .character-sections{gap:0 16px}
-}
-@media(max-width:510px){
- #ss-blue-silver #b-dialog.catalog-page.catalog-dialog.ashley-detail-page{padding-inline:14px}
- .stats-profile .character-profile{grid-template-columns:minmax(0,1fr)}
- .stats-profile .character-identity{grid-column:1;grid-row:2}
- .stats-profile .character-profile-art{grid-column:1;grid-row:1;height:clamp(220px,80vw,320px)}
- .stats-profile .character-skill-facts{grid-template-columns:minmax(0,1fr);gap:2px}
- .stats-profile .character-skill-facts dd+dt{margin-top:5px}
-}
-
-#ss-blue-silver #b-dialog.ashley-detail-page #dialog-status{display:none}
-.stats-profile .stats-profile-details{margin:22px 0 0;border-bottom:1px solid var(--stats-line)}
-.stats-profile .stats-profile-details div{grid-template-columns:clamp(48px,8vw,90px) minmax(0,1fr);border-color:var(--stats-line);padding:11px 0}
-.stats-profile .stats-profile-details dd{display:block}
