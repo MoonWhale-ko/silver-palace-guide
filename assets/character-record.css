@@ -41,3 +41,13 @@ figure.application-sheet{position:relative;margin:0;width:100%;aspect-ratio:1055
  .character-profile-art{grid-row:2}
  .character-sections{gap:0 12px}
 }
+
+#ss-blue-silver .catalog-page.catalog-dialog.ashley-detail-page{
+ box-sizing:border-box;max-width:1200px
+}
+#ss-blue-silver .ashley-detail-page article.character-record{
+ max-width:1152px
+}
+#ss-blue-silver .ashley-detail-page .character-section p{
+ max-width:72ch
+}

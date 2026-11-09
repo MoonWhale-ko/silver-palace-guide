@@ -311,7 +311,7 @@ export async function openCharacterCatalog(root){
  if(selected){
  const back=document.createElement('a');const listUrl=new URL(location.href);listUrl.searchParams.delete('character');back.href=listUrl.href;back.textContent='← 캐릭터 목록';back.className='dossier-back';
  const icons={element:elementIcons[selected.element],job:jobIcons[selected.job]};
- body.replaceChildren(back,createCharacterRecord(selected,icons));host.classList.add('character-detail-page');root.querySelector('#dialog-title').textContent=selected.name;root.querySelector('#dialog-status').textContent='캐릭터 기록';document.title=selected.name+' · S.T.A.T.S.';return;
+ body.replaceChildren(back,createCharacterRecord(selected,icons));host.classList.add('character-detail-page');host.classList.toggle('ashley-detail-page',selected.id==='1501');root.querySelector('#dialog-title').textContent=selected.name;root.querySelector('#dialog-status').textContent='캐릭터 기록';document.title=selected.name+' · S.T.A.T.S.';return;
  }
  const resize=new ResizeObserver(entries=>{const width=entries[0].contentRect.width;if(width>0){const ratio=parseFloat(getComputedStyle(stack).getPropertyValue('--folder-ratio'))||.707;stack.style.setProperty('--folder-height',(width/ratio)+'px');}});resize.observe(stack);
  if(host.tagName==='DIALOG'&&!host.open)host.showModal();
