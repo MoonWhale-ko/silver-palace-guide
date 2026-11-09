@@ -13,7 +13,6 @@ export function createCharacterRecord(character, icons = {}) {
  if (redesigned) identity.append(make('p', 'stats-profile-kicker', '캐릭터 도감'));
  if (!redesigned && character.alias) identity.append(make('p', 'character-alias', character.alias));
  identity.append(make('h1', '', character.name));
- if (redesigned && character.alias) identity.append(make('p', 'character-alias', character.alias));
  const facts = make('dl');
  for (const [label, value, icon] of [
   ['속성', character.element, icons.element],
@@ -38,7 +37,17 @@ export function createCharacterRecord(character, icons = {}) {
  const picture = make('img', 'character-profile-art');
  picture.src = character.illustration || character.portrait;
  picture.alt = character.name;
- if (character.guideSource) identity.append(make('p', 'character-guide-source', character.guideSource));
+ if (redesigned) {
+  const profile = make('dl', 'stats-profile-details');
+  for (const [label, value] of [['소개', character.introduction], ['생일', character.birthday]]) {
+   const row = make('div');
+   row.append(make('dt', '', label), make('dd', '', value || '—'));
+   profile.append(row);
+  }
+  identity.append(profile);
+ } else if (character.guideSource) {
+  identity.append(make('p', 'character-guide-source', character.guideSource));
+ }
  hero.append(identity, picture);
  record.append(hero);
 
