@@ -64,3 +64,54 @@ figure.application-sheet{position:relative;margin:0;width:100%;aspect-ratio:1055
 .character-skill-values table{border-collapse:collapse;font-variant-numeric:tabular-nums}
 .character-skill-values :is(th,td){padding:5px 8px;border-bottom:1px solid #ded8cb;text-align:left}
 @media(max-width:680px){.character-combat-steps{grid-template-columns:1fr;gap:0}}
+
+body:has(.ashley-detail-page){background:#101622}
+body:has(.ashley-detail-page)::before{content:none}
+#ss-blue-silver .ashley-detail-page .dossier-back{
+ display:inline-flex;align-items:center;min-height:44px;margin:0 0 12px;color:#c7d3e5
+}
+#ss-blue-silver .ashley-detail-page .stats-profile{
+ --stats-text:#edf2fa;--stats-muted:#b8c6da;--stats-line:#3b4960;--stats-panel:#1b2536;
+ margin:0;padding:0;background:transparent;color:var(--stats-text);font:400 1rem/1.65 Pretendard,system-ui,sans-serif
+}
+.stats-profile .character-profile{
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.7fr);
+ gap:clamp(16px,5vw,48px);max-width:none;margin:0;padding:clamp(18px,4vw,44px);
+ border:1px solid var(--stats-line);border-radius:18px;
+ background:radial-gradient(ellipse at top right,#453444 0%,transparent 64%),var(--stats-panel)
+}
+.stats-profile .character-identity{grid-column:1;grid-row:1}
+.stats-profile .stats-profile-kicker{margin:0 0 4px;color:#f4bc9b;font-size:.875rem}
+.stats-profile .character-identity h1{font:700 clamp(36px,6vw,64px)/1.08 Pretendard,system-ui,sans-serif;margin:0}
+.stats-profile .character-alias{margin:4px 0 16px;color:var(--stats-muted);font-size:1.125rem}
+.stats-profile .character-identity dl{display:flex;flex-wrap:wrap;gap:8px}
+.stats-profile .character-identity dl div{
+ display:flex;flex-wrap:wrap;gap:8px;padding:5px 10px;border:1px solid var(--stats-line);border-radius:8px
+}
+.stats-profile .character-profile-art{
+ grid-column:2;grid-row:1;background:transparent;height:clamp(160px,27vw,300px);object-fit:contain
+}
+.stats-profile :is(dt,.character-guide-source){color:var(--stats-muted)}
+.stats-profile-layout{display:grid;grid-template-columns:145px minmax(0,1fr);gap:24px;margin-top:24px;align-items:start}
+.stats-profile .character-sections{display:grid;gap:0;margin:0;border:0}
+.stats-profile .character-sections a{border-bottom:1px solid var(--stats-line);text-decoration:none}
+.stats-profile .character-sections a:hover{text-decoration:underline}
+.stats-profile .character-section{
+ padding:clamp(14px,3vw,26px);margin-bottom:16px;border:1px solid var(--stats-line);border-radius:14px;background:var(--stats-panel)
+}
+.stats-profile .character-section h2{font:650 1.25rem/1.4 Pretendard,system-ui,sans-serif;margin:0 0 14px}
+.stats-profile .character-section p{color:var(--stats-muted)}
+.stats-profile .character-combat-steps li,.stats-profile .character-skill-values :is(th,td){border-color:var(--stats-line)}
+.stats-profile #character-skills .character-entry + .character-entry{padding-top:14px;border-top:1px solid var(--stats-line)}
+.stats-profile .character-skill-values summary{color:#f4bc9b}
+@media(max-width:740px){
+ .stats-profile-layout{grid-template-columns:minmax(0,1fr);gap:14px}
+ .stats-profile .character-sections{display:flex;flex-wrap:wrap;gap:0 16px}
+}
+@media(max-width:510px){
+ #ss-blue-silver .catalog-page.catalog-dialog.ashley-detail-page{padding-inline:14px}
+ .stats-profile .character-profile{grid-template-columns:minmax(0,1fr)}
+ .stats-profile .character-profile-art{grid-column:1;grid-row:2}
+ .stats-profile .character-skill-facts{grid-template-columns:minmax(0,1fr);gap:2px}
+ .stats-profile .character-skill-facts dd+dt{margin-top:5px}
+}

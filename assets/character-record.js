@@ -6,11 +6,14 @@ export function createCharacterRecord(character, icons = {}) {
   return node;
  };
 
- const record = make('article', 'character-record');
+ const redesigned = character.id === '1501';
+ const record = make('article', redesigned ? 'character-record stats-profile' : 'character-record');
  const hero = make('header', 'character-profile');
  const identity = make('div', 'character-identity');
- if (character.alias) identity.append(make('p', 'character-alias', character.alias));
+ if (redesigned) identity.append(make('p', 'stats-profile-kicker', '캐릭터 도감'));
+ if (!redesigned && character.alias) identity.append(make('p', 'character-alias', character.alias));
  identity.append(make('h1', '', character.name));
+ if (redesigned && character.alias) identity.append(make('p', 'character-alias', character.alias));
  const facts = make('dl');
  for (const [label, value, icon] of [
   ['속성', character.element, icons.element],
@@ -35,13 +38,20 @@ export function createCharacterRecord(character, icons = {}) {
  const picture = make('img', 'character-profile-art');
  picture.src = character.illustration || character.portrait;
  picture.alt = character.name;
+ if (character.guideSource) identity.append(make('p', 'character-guide-source', character.guideSource));
  hero.append(identity, picture);
  record.append(hero);
- if (character.guideSource) record.append(make('p', 'character-guide-source', character.guideSource));
 
  const navigation = make('nav', 'character-sections');
  navigation.setAttribute('aria-label', '캐릭터 상세 목차');
- record.append(navigation);
+ const sections = redesigned ? make('div', 'stats-profile-sections') : record;
+ if (redesigned) {
+  const layout = make('div', 'stats-profile-layout');
+  layout.append(navigation, sections);
+  record.append(layout);
+ } else {
+  record.append(navigation);
+ }
  for (const [key, label, content] of [
   ['combat', '전투 특징', character.combat],
   ['skills', '스킬', character.skills],
@@ -103,7 +113,7 @@ export function createCharacterRecord(character, icons = {}) {
   } else {
    section.append(make('p', 'character-section-empty', '등록된 자료가 없습니다.'));
   }
-  record.append(section);
+  sections.append(section);
  }
  return record;
 }
