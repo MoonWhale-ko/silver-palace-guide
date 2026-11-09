@@ -42,7 +42,7 @@ figure.application-sheet{position:relative;margin:0;width:100%;aspect-ratio:1055
  .character-sections{gap:0 12px}
 }
 
-#ss-blue-silver .catalog-page.catalog-dialog.ashley-detail-page{
+#ss-blue-silver #b-dialog.catalog-page.catalog-dialog.ashley-detail-page{
  box-sizing:border-box;width:100%;max-width:none;padding-inline:clamp(14px,2.5vw,48px)
 }
 #ss-blue-silver .ashley-detail-page article.character-record{
@@ -107,7 +107,7 @@ body:has(.ashley-detail-page)::before{content:none}
  .stats-profile .character-sections{gap:0 16px}
 }
 @media(max-width:510px){
- #ss-blue-silver .catalog-page.catalog-dialog.ashley-detail-page{padding-inline:14px}
+ #ss-blue-silver #b-dialog.catalog-page.catalog-dialog.ashley-detail-page{padding-inline:14px}
  .stats-profile .character-profile{grid-template-columns:minmax(0,1fr)}
  .stats-profile .character-identity{grid-column:1;grid-row:2}
  .stats-profile .character-profile-art{grid-column:1;grid-row:1;height:clamp(220px,80vw,320px)}
